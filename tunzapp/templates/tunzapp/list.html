@@ -1,0 +1,45 @@
+{% extends "tunzapp/app_base.html" %}{% load static %} {% block content %}
+<!-- Header -->
+{% include "tunzapp/details_header.html" %}
+<!-- Support Children Section -->
+<section class="support-children p-5">
+  <div class="container">
+    <h2 class="text-center mb-5">Support Our Children</h2>
+    <div class="steps-wrapper d-flex justify-content-between flex-wrap g-3">
+      {% for child in queryset %}
+      <!-- Card 1 -->
+      <div class="card col-lg-3 col-md-5 col-sm-10 mb-3">
+        <img
+          src="{{child.image.url}}"
+          class="card-img-top"
+          alt="..."
+          style="max-height: 200px"
+        />
+        <div class="card-body bg-black text-white">
+          <span class="card-title color">Name: </span
+          ><span class="card-text"
+            >{{child.first_name}} {{child.last_name}}</span
+          ><br />
+          <span class="card-title color">Age: </span
+          ><span class="card-text">{{child.age}}</span><br />
+          <span class="card-title color">Gender: </span
+          ><span class="card-text">{{child.gender}}</span><br />
+          <span class="card-title color">Location: </span
+          ><span class="card-text">{{child.location}}</span><br />
+
+          <a
+            href="{% url 'details' child.id %}"
+            class="btn tunza-cta"
+            style="max-width: 100%"
+            >View Details</a
+          >
+        </div>
+      </div>
+
+      {% endfor %}
+    </div>
+  </div>
+</section>
+<!-- Support Children End -->
+
+{% endblock %}

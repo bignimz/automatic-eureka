@@ -1,0 +1,123 @@
+{% extends "tunzapp/app_base.html" %}{% load static %}{% block content %}
+<!-- Hero Section -->
+<section class="hero">
+  <div class="container col-xxl-8 px-4 py-5">
+    <div class="row flex-lg-row-reverse align-items-center g-5 py-5">
+      <div class="col-10 d-none d-md-block col-lg-6 images">
+        <img
+          src="{% static 'images/hero.png' %}"
+          class="d-block mx-lg-auto img-fluid"
+          alt=""
+          width="700"
+          height="500"
+          loading="lazy"
+        />
+      </div>
+      <div class="col-lg-6">
+        <h1 class="display-5 fw-bold lh-5 mb-3 text-white">
+          LET’S GIVE OUR <span class="color">CHILDREN</span>, THEIR
+          <span class="color">DREAMS</span> BACK
+        </h1>
+        <div class="d-grid gap-2 d-md-flex justify-content-md-start">
+          <a
+            href="{% url 'register' %}"
+            class="btn tunza-cta btn-lg px-4 me-md-2"
+          >
+            Join us now
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- How This Works Section -->
+<section class="steps p-5">
+  <div class="container">
+    <h2 class="text-center mb-5">How This All Works</h2>
+    <div class="steps-wrapper row row-cols-lg-3 row-cols-md-2 row-cols-sm-1">
+      <!-- Box 1 -->
+      <div class="tunza-box rounded col-lg-3 col-md-5 col-sm-10">
+        <h3 class="color">IDENTIFICATION</h3>
+        <p>
+          Is to identify the child who is need of financial support. Analyze the
+          specific needs of that particular child as different children have
+          different needs eg. money for upkeep,clothes,shoes,books
+        </p>
+      </div>
+
+      <!-- Box 2 -->
+      <div class="tunza-box rounded col-lg-3 col-md-5 col-sm-10">
+        <h3 class="color">BACKGROUND CHECK</h3>
+        <p>
+          We then do a background check of the child to eliminate imposters who
+          dont require financial support. We do this by visiting the childs
+          home, meeting and interviewing the parents,check on the financial
+          status of the family as a whole.
+        </p>
+      </div>
+
+      <!-- Box 3 -->
+      <div class="tunza-box rounded col-lg-3 col-md-5 col-sm-10">
+        <h3 class="color">REGISTRATION</h3>
+        <p>
+          After verification we then proceed to register the child in the system
+          ,so that the donors can view them in the website and contribute
+          towards their needs.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- How This Works End -->
+
+<!-- Support Children Section -->
+<section class="support-children p-5">
+  <div class="container">
+    <h2 class="text-center mb-5">Support Our Children</h2>
+    <div
+      class="steps-wrapper row row-cols-lg-3 row-cols-md-2 row-cols-sm-1 g-3"
+    >
+      {% for child in queryset|slice:":4" %}
+      <!-- Card 1 -->
+      <div class="card col-lg-3 col-md-5 col-sm-10">
+        <img
+          src="{{child.image.url}}"
+          class="card-img-top"
+          alt="..."
+          style="max-height: 200px"
+        />
+        <div class="card-body bg-black text-white">
+          <span class="card-title color">Name: </span
+          ><span class="card-text"
+            >{{child.first_name}} {{child.last_name}}</span
+          ><br />
+          <span class="card-title color">Age: </span
+          ><span class="card-text">{{child.age}}</span><br />
+          <span class="card-title color">Gender: </span
+          ><span class="card-text">{{child.gender}}</span><br />
+          <span class="card-title color">Location: </span
+          ><span class="card-text">{{child.location}}</span><br />
+
+          <a
+            href="{% url 'details' child.id %}"
+            class="btn tunza-cta"
+            style="max-width: 100%"
+            >View Details</a
+          >
+        </div>
+      </div>
+
+      {% endfor %}
+    </div>
+    <div class="all_children text-center">
+      <a href="{% url 'list' %}" class="btn tunza-cta-dark"
+        >View All Children</a
+      >
+    </div>
+  </div>
+</section>
+<!-- Support Children End -->
+
+<!-- Subscription -->
+{% include "tunzapp/subscribe.html" %} {% endblock %}

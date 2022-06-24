@@ -1,0 +1,40 @@
+{% extends "tunzapp/app_base.html" %}{% load static %} {% block content %}
+<!-- Header -->
+{% include "tunzapp/details_header.html" %}
+
+<!-- About -->
+<div class="container">
+  <div class="row row-cols-lg-2 row-cols-md-2 row-cols-sm-1 g-5 my-5">
+    <div class="col-sm-10 col-lg-7 col-md-7 p-3">
+      <h2 class="mb-3">More About Us</h2>
+      <p class="lh-5 lead">
+        LEA MTOTO Problem Statement: We have noticed that in our society, there
+        are so many cases of children who are bright, focused and have big
+        dreams, but most of these dreams end up being abandoned simply because
+        these children come from struggling families. Unless their stories are
+        aired on tv’s, it’s almost impossible to know if they even exists or if
+        their stories are actually true.
+      </p>
+      <p class="lead">
+        For a fact we know that there are so many well wishers out there who are
+        willing to offer support to these children but knowing who they are or
+        how to reach to them and support them is difficult or even impossible,
+        unless the media airs their stories. So it is for this reason that we
+        thought of creating a web application to ensure not only the NGO’S but
+        also individual well wishers get an opportunity to create an impact to
+        these children’s lives and ensure they get to live up to their full
+        potential in life.
+      </p>
+      <p class="lead">
+        Solution: Lea mtoto is a platform that brings together donors to support
+        needy students across Kenya. The platform lists a record of verified
+        needy students, their bio, areas of needs, academic achiements etc.
+      </p>
+    </div>
+    <div class="col-sm-10 col-lg-4 col-md-4 p-3">
+      <img src="{% static 'images/about.jpg' %}" alt="" class="img-fluid" />
+    </div>
+  </div>
+</div>
+
+{% endblock %}

@@ -1,0 +1,28 @@
+{% load static %}
+
+<!-- Email Subscription Start -->
+<section
+  class="subscription row row-cols-lg-2 my-5 bg-black"
+  style="height: 200px"
+>
+  <div class="col-6 sub-image d-none d-md-block">
+    <img src="{% static '../images/subscribe.png' %}" alt="" />
+  </div>
+  <div class="form-section col-6">
+    <h3 class="color text-center mt-3">Subscribe To Our Newsletters</h3>
+    <div class="subscription justify-content-center align-items-center">
+      <form class="sub-form d-flex flex-wrap" action="" method="post">
+        <input
+          class="form-control-lg mx-3"
+          type="email"
+          name="email"
+          id="email"
+          placeholder="Email address"
+          required
+        />
+        <input class="btn subscribe-btn" type="submit" value="Subscribe" />
+      </form>
+    </div>
+  </div>
+</section>
+<!-- Email Subscription End -->

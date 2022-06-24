@@ -1,0 +1,49 @@
+{% extends 'tunzapp/base.html' %}
+
+{% block content %}
+
+<div class="container-fluid" id="login">
+
+	<div class="container h-100">
+		<div class="d-flex justify-content-center h-100">
+			<div class="user_card">
+				<div class="d-flex justify-content-center">
+					<h2 id="form-title">Login To Support</h2>
+				</div>
+				<div class="d-flex justify-content-center form_container logs">
+
+					<form method="POST" action="">
+                        {% csrf_token %}
+						<div class="logins">
+						<input type="text" class="form-control" name="username" placeholder="Username">
+						<br>
+						<input type="password" class="form-control" name="password" placeholder="Enter Password">
+
+						</div>
+						
+
+				   		<div class="d-flex justify-content-center mt-3 login_container">
+				 			<button class="btnregister" type="submit">LOGIN</button>
+                            
+				   		</div>
+					</form>
+				</div>
+                
+		
+				<div class="mt-2">
+					<div class="d-flex justify-content-center links">
+						Don't have an account? <a href="{% url 'register' %}" class="ml-2">Register</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+
+
+</div>
+
+
+
+
+{% endblock %}

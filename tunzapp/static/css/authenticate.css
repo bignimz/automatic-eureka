@@ -1,0 +1,134 @@
+
+
+	.user_card {
+        width: 500px;
+        height: 30rem;
+        margin-top: 10rem;
+        background: #1D1D1D;
+        position: relative;
+        display: flex;
+        justify-content: center;
+        
+        flex-direction: column;
+        padding: 10px;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+        -webkit-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+        -moz-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+        border-radius: 5px;
+
+    }
+
+    .form_container {
+        margin-top: 20px;
+    }
+
+    #form-title{
+        color: #FFE712;
+    }
+    .login_btn {
+        width: 100%;
+        background: #63C6B6 !important;
+        color: white !important;
+    }
+    .login_btn:focus {
+        box-shadow: none !important;
+        outline: 0px !important;
+    }
+    .login_container {
+        padding: 0 2rem;
+    }
+    .input-group-text {
+        background: #63C6B6 !important;
+        color: white !important;
+        border: 0 !important;
+        border-radius: 0.25rem 0 0 0.25rem !important;
+    }
+    .input_user,
+    .input_pass:focus {
+        box-shadow: none !important;
+        outline: 0px !important;
+    }
+
+#login{
+    background-color: #1D1D1D;
+    height: 91vh;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+}
+.register input{
+    background-color: #1D1D1D !important;
+    width: 22rem !important;
+    height: 49px !important;
+    border: 2px solid #F7E714 !important;
+    border-radius: 13px 13px 13px 13px !important;
+    margin-left: 2rem;
+}
+.btnregister{
+    background-color: #F7E714;
+    width: 22rem;
+    height: 49px;
+    border: 2px solid #F7E714 !important;
+    border-radius: 13px 13px 13px 13px !important;
+
+    color: #000000;
+    font-size: 25px;
+
+
+}
+.links a{
+    color: #F7E714;
+    text-decoration: none;
+    font-weight: 700;
+
+}
+.links{
+    color: #ffffff;
+    margin-left: -8rem;
+    font-weight: 600;
+}
+.register input::placeholder{
+    color: #A6A5A5 !important;
+    
+    padding-left: 2rem !important;
+    
+}
+.register input{
+    color: #ffffff;
+}
+.register input:focus{
+    color: #ffffff;
+}
+.logins{
+    margin-left: 2rem;
+}
+.logins .form-control{
+    background-color: #1D1D1D !important;
+
+    
+}
+.logins input::focus-outer{
+    background-color: #1D1D1D;
+}
+.logs .form-control{
+    background-color: #1D1D1D !important;
+    width: 22rem !important;
+    height: 49px !important;
+    border: 2px solid #F7E714 !important;
+    border-radius: 13px 13px 13px 13px !important;
+    
+}
+
+.logs input::placeholder{
+    color: #A6A5A5 !important;
+    
+    padding-left: 2rem !important;
+    
+}
+.logs input{
+    color: #ffffff;
+}
+.logs input:focus{
+    color: #ffffff;
+}

@@ -1,0 +1,158 @@
+{% extends 'tunzapp/app_base.html' %} {% block content %}<br />
+{% include "tunzapp/details_header.html" %}
+  <div class="container">
+    <div class="heading">
+      <h1>{{ child.first_name }}</h1>
+    </div>
+    <div class="card mb-4" style="max-width: 700px">
+      <div class="row g-0">
+        <div class="col-md-6">
+          <img
+            class="img-thumbnail"
+            src="{{child.image.url}}"
+            alt="image of a needy child who needs your help"
+            style="height: 340px; width: 280px"
+            class="img-fluid rounded-start"
+          />
+        </div>
+        <div class="col-md-6">
+          <div class="card-body">
+            <ul class="list-group list-group-flush">
+              <li class="list-group-item">
+                Full Name : {{ child.first_name }} {{ child.last_name }}
+              </li>
+              <li class="list-group-item">Gender : {{ child.gender }}</li>
+              <li class="list-group-item">Age : {{child.age }}</li>
+              <li class="list-group-item">
+                Family Members : {{child.family_members}}
+              </li>
+              <li class="list-group-item">
+                Class / form : {{obje.class_overall}}
+              </li>
+              <li class="list-group-item">School : {{child.school}}</li>
+              <li class="list-group-item">
+                Academic Performance : {{child.school_grade}}
+              </li>
+              <li class="list-group-item">Dreams :{{ child.dreams}}</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div style="padding-top: 10vh">
+      <div class="card">
+        <div class="row d-flex p-2 mx-md-n5">
+          {% for child in child_data %}
+          <div class="col px-md-5">
+            <h2>Areas of need</h2>
+            <ul>
+              {% for needs in child.needs.all %}
+              <li>{{needs.needs}}</li>
+              {% endfor %}
+            </ul>
+          </div>
+          {% endfor %}
+          <div class="col px-md-5">
+            <div><h4>TOTAL STANDING</h4></div>
+            <div><h3>Ksh {{child.fee_amount}}</h3></div>
+          </div>
+          <div class="col px-md-5">
+            <h4>Remaining Amount</h4>
+            <div><h3>{{child.remaining_amount}}</h3></div>
+          </div>
+          <div class="col px-md-5">
+            <h4>Total Transactions</h4>
+
+            <div><h3>{{child.total_transactions}}</h3></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="container d-flex justify-content-center py-4">
+      <div class="card" style="width: 30rem">
+        <table class="table table-success table-striped table-hover">
+          <h3 class="text-center">Recent donation</h3>
+          <hr />
+          {% for transaction in transactions %}
+          <table class="table">
+            <thead>
+              <tr>
+                <th scope="col">No:</th>
+                <th scope="col">Donor</th>
+                <th scope="col">Child</th>
+                <th scope="col">Amount</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th class="table-danger" scope="row">1</th>
+                <td class="table-info">{{transaction.donated_by}}</td>
+                <td class="table-primary">{{transaction.child.full_name}}</td>
+                <td class="table-success">Ksh {{transaction.amount}}</td>
+              </tr>
+            </tbody>
+          </table>
+          {% endfor %}
+        </table>
+      </div>
+    </div>
+    <div class="text-center" style="padding-top: 5vh">
+      <button
+        class="btn btn-success btn-lg rounded-pill"
+        type="submit"
+        data-bs-toggle="modal"
+        data-bs-target="#support"
+      >
+        <h2 class="support">SUPPORT</h2>
+      </button>
+    </div>
+  </div>
+</div>
+
+<!-- Button trigger modal -->
+
+<!-- Modal -->
+<div
+  class="modal fade"
+  id="support"
+  data-bs-backdrop="static"
+  data-bs-keyboard="false"
+  tabindex="-1"
+  aria-labelledby="staticBackdropLabel"
+  aria-hidden="true"
+>
+  <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+    <div class="modal-content">
+      <div class="modal-header d-flex justify-content-center">
+        <h5 class="d-flex justify-content-center">Fill in the Form</h5>
+        <button
+          type="button"
+          class="btn-close"
+          data-bs-dismiss="modal"
+          aria-label="Close"
+        ></button>
+      </div>
+      <div class="modal-body d-flex justify-content-center">
+        <form action="" method="post">
+          {% csrf_token %}
+          <label for="">Enter Amount:</label><br />
+
+          <input
+            type="number"
+            name="amount"
+            id=""
+            placeholder="enter Amount"
+            max="2000000000"
+            min="0"
+          />
+          <br />
+          <div>
+            <button class="btn btn-success mt-2" type="submit">Donate</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% endblock %}

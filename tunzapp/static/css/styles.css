@@ -1,0 +1,189 @@
+/* Global */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    overflow-x: hidden;
+}
+
+/* CUSTOM SCROLLBAR */
+/* width */
+::-webkit-scrollbar {
+    width: 10px;
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: #f1f1f1;
+  }
+  
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: #444;
+  }
+  
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: #FFE712;
+  }
+
+
+.tunza-container {
+    width: 86%;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.color {
+    color: #FFE712;
+}
+
+.tunza-cta {
+    background-color: #FFE712;
+    color: #000;
+    text-transform: uppercase;
+    margin-top: 30px;
+    font-weight: 500;
+}
+
+.tunza-cta:hover {
+    border: 2px solid #FFE712;
+    color: white;
+}
+
+.tunza-cta-dark {
+    background-color: #000;
+    color: #FFE712;
+    text-transform: uppercase;
+    margin-top: 30px;
+    font-weight: 500;
+    padding: 20px 30px;
+    margin-top: 30px;
+}
+
+.tunza-cta-dark:hover {
+    background-color: #FFE712;
+    color: #000;
+}
+
+/* Header Home */
+.hero {
+    width: 100%;
+    background-color: black;
+}
+
+/* Details Page Header */
+.details-header {
+    width: 100%;
+    height: 200px;
+    background-image: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.8)), url('../images/subscribe.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    color: white;
+}
+
+/* Outline Buttons */
+.tunza-btn-outline {
+    border: 2px solid #FFE712;
+    color: white;
+    padding-left: 30px;
+    padding-right: 30px;
+}
+
+.tunza-btn-outline:hover {
+    background-color: #FFE712;
+    color: #000;
+}
+
+/* Nav Links */
+.nav-link {
+    font-size: 20px;
+    color: #FFE712;
+    margin-right: 30px;
+}
+
+/* Hero Images */
+.hero-image {
+    border: 3px solid #FFE712;
+    border-radius: 20px;
+}
+
+.hero-1 {
+    z-index: 5;
+    width: 400px;
+    height: 420px;
+}
+
+.images {
+    position: relative;
+}
+
+.hero-2 {
+    position: absolute;
+    top: 180px;
+    left: -50px;
+    z-index: 10;
+    width: 350px;
+    height: 300px;
+
+}
+
+/* How it works */
+.steps-wrapper {
+    display: flex;
+    justify-content: space-between;
+}
+.tunza-box {
+    padding: 20px;
+    background-color: #222;
+    color: white;
+    line-height: 30px;
+    margin-bottom: 20px;
+}
+
+/* Subscription Section */
+.sub-image {
+    height: 100%;
+    background-image: url("../images/subscribe.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.subscribe-btn {
+    background-color: #FFE712;
+    color: #111;
+    text-transform: uppercase;
+    font-weight: 500;
+}
+
+.subscribe-btn:hover {
+    border: 2px solid #FFE712;
+    color: white;
+}
+
+.form-section {
+    position: relative;
+}
+
+.sub-form {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+/* Profile Card */
+.card:hover {
+    
+}
+
+/* Footer */
+.footer-link {
+    margin-right: 20px;
+}
